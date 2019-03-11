@@ -1,8 +1,13 @@
 import React from "react";
-import Link from "next/link";
+import moduleName from "../components/Items";
+import Items from "../components/Items";
 
 const Home = () => {
-  return <div />;
+  return (
+    <div>
+      <Items />
+    </div>
+  );
 };
 
 export default Home;
