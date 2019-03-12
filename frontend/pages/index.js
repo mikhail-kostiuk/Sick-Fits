@@ -2,10 +2,10 @@ import React from "react";
 import moduleName from "../components/Items";
 import Items from "../components/Items";
 
-const Home = () => {
+const Home = props => {
   return (
     <div>
-      <Items page="1" />
+      <Items page={parseFloat(props.query.page) || 1} />
     </div>
   );
 };
