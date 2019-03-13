@@ -15,9 +15,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.4",
     "dotenv": "^6.2.0",
     "graphql": "^14.1.1",
     "graphql-yoga": "^1.17.4",
+    "jsonwebtoken": "^8.5.0",
     "prisma-binding": "^2.3.2"
   },
   "devDependencies": {
