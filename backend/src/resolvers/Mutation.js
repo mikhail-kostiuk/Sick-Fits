@@ -51,7 +51,7 @@ const Mutation = {
         data: {
           ...args,
           password,
-          permissions: { set: ["User"] }
+          permissions: { set: ["USER"] }
         }
       },
       info
