@@ -1,10 +1,17 @@
 import React from "react";
 import Link from "next/link";
 import NavStyles from "./styles/NavStyles";
+import User from "./User";
 
 const Nav = () => {
   return (
     <NavStyles>
+      <User>
+        {data => {
+          console.log(data);
+          return <p>User</p>;
+        }}
+      </User>
       <li>
         <Link href="/items">
           <a>Items</a>
