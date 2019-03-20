@@ -65,12 +65,20 @@ class CreateItem extends Component {
       "https://api.cloudinary.com/v1_1/datu1c8fw/image/upload",
       { method: "POST", body: data }
     );
+    console.log(res);
     const file = await res.json();
     console.log(file);
-    this.setState({
-      image: file.secure_url,
-      largeImage: file.eager[0].secure_url
-    });
+    if (file.error) {
+      this.setState({
+        image: "",
+        largeImage: ""
+      });
+    } else {
+      this.setState({
+        image: file.secure_url,
+        largeImage: file.eager[0].secure_url
+      });
+    }
   }
 
   render() {
