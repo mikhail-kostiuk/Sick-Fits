@@ -53,7 +53,6 @@ const Mutation = {
     const hasPermission = ctx.request.user.permissions.some(permission =>
       ["ADMIN", "ITEMDELETE"].includes(permission)
     );
-    console.log(ownItem, hasPermission);
     if (!ownItem && !hasPermission) {
       throw new Error("You don't have permission to do that!");
     }
@@ -216,7 +215,7 @@ const Mutation = {
     const [existingCartItem] = await ctx.db.query.cartItems({
       where: {
         user: { id: userId },
-        item: { id: args.item }
+        item: { id: args.id }
       }
     });
     // 3. Check if that item already in their cart and increment by 1 if it is
@@ -229,7 +228,7 @@ const Mutation = {
         info
       );
     }
-    // 4. Id its not, create a fresh CartItem for that user
+    // 4. If its not, create a fresh CartItem for that user
     return ctx.db.mutation.createCartItem(
       {
         data: {
