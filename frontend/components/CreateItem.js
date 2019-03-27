@@ -49,7 +49,6 @@ class CreateItem extends Component {
   async handleFormSubmit(e, mutationFunc) {
     e.preventDefault();
     const res = await mutationFunc();
-    console.log(res);
     Router.push({
       pathname: "/item",
       query: { id: res.data.createItem.id }
@@ -65,9 +64,7 @@ class CreateItem extends Component {
       "https://api.cloudinary.com/v1_1/datu1c8fw/image/upload",
       { method: "POST", body: data }
     );
-    console.log(res);
     const file = await res.json();
-    console.log(file);
     if (file.error) {
       this.setState({
         image: "",
