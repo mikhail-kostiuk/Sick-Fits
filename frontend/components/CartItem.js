@@ -20,6 +20,16 @@ const CartItemStyles = styled.li`
 `;
 
 const CartItem = ({ cartItem }) => {
+  // In case the item has been deleted from items list, not just from cart
+  if (!cartItem.item) {
+    return (
+      <CartItemStyles>
+        <p>This item has been removed</p>
+        <div />
+        <RemoveFromCart id={cartItem.id} />
+      </CartItemStyles>
+    );
+  }
   return (
     <CartItemStyles>
       <img src={cartItem.item.image} width="100" alt={cartItem.item.title} />

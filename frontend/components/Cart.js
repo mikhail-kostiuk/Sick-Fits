@@ -40,7 +40,6 @@ const Cart = () => {
                         &times;
                       </CloseButton>
                       <Supreme>{currentUser.name}'s Cart</Supreme>
-                      {console.log(currentUser)}
                       <p>
                         You have {currentUser.cart.length} Item
                         {currentUser.cart.length === 1 ? "" : "s"} in your cart.

@@ -58,7 +58,6 @@ class UpdateItem extends Component {
         ...this.state
       }
     });
-    console.log(res);
     // Router.push({
     //   pathname: "/item",
     //   query: { id: res.data.createItem.id }
