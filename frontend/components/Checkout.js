@@ -51,7 +51,9 @@ class Checkout extends Component {
                 name="Sick Fits"
                 description={`Order of ${totalItems(currentUser.cart)} items!`}
                 image={
-                  currentUser.cart[0].item && currentUser.cart[0].item.image
+                  currentUser.cart.length
+                    ? currentUser.cart[0].item.image
+                    : null
                 }
                 stripeKey="pk_test_aLEsxm7mjJtqqyUcsPJtwHVC"
                 currency="USD"
