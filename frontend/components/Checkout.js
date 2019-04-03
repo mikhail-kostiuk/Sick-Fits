@@ -28,13 +28,18 @@ function totalItems(cart) {
 }
 
 class Checkout extends Component {
-  onToken(res, mutationFunc) {
+  async onToken(res, mutationFunc) {
+    NProgress.start();
     console.log(res);
-    mutationFunc({
+    const order = await mutationFunc({
       variables: {
         token: res.id
       }
     }).catch(err => alert(err.message));
+    Router.push({
+      pathname: "/order",
+      query: { id: order.data.createOrder.id }
+    });
   }
 
   render() {
