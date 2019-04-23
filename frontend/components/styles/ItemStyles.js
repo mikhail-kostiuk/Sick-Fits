@@ -26,8 +26,10 @@ const Item = styled.div`
     border-top: 1px solid ${props => props.theme.lightgrey};
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 1px;
-    background: ${props => props.theme.lightgrey};
+    background: ${props => props.theme.lightGrey};
     & > * {
+      font-family: "radnika_next";
+      color: ${props => props.theme.black};
       background: white;
       border: 0;
       font-size: 1rem;
